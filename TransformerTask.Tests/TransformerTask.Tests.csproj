@@ -13,7 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\TransformerTask\TransformerTask.csproj" />
+      <ProjectReference Include="..\TransfomerTask\TransformerTask.csproj" />
     </ItemGroup>
 
 </Project>
