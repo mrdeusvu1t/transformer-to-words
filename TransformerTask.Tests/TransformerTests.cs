@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 
 namespace TransformerTask.Tests
@@ -38,6 +39,14 @@ namespace TransformerTask.Tests
             return transformer.Transform(source);
         }
 
-        //TODO: Add tests for Exception cases here.
+        [Test]
+        public void Transform_ArrayIsNull_ThrowArgumentNullException() =>
+            Assert.Throws<ArgumentNullException>(() => new Transformer().Transform(null),
+                "Array cannot be null.");
+
+        [Test]
+        public void Transform_ArrayIsEmpty_ThrowArgumentException() =>
+            Assert.Throws<ArgumentException>(() => new Transformer().Transform(new double[] { }),
+                "Array cannot be empty.");
     }
 }
