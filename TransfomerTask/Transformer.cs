@@ -5,7 +5,7 @@ namespace TransformerTask
     /// <summary>
     /// Implement transformer class.
     /// </summary>
-    public class Transformer
+    public sealed class Transformer
     {
         /// <summary>
         /// Transforms each element of source array into its 'word format'.
