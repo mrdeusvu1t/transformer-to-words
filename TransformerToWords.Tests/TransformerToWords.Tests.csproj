@@ -21,7 +21,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-    <ItemGroup>
-      <ProjectReference Include="..\TransfomerTask\TransformerTask.csproj" />
-    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TransformerToWords\TransformerToWords.csproj" />
+  </ItemGroup>
 </Project>

@@ -5,7 +5,7 @@ using NUnit.Framework;
 #pragma warning disable SA1116
 #pragma warning disable SA1118
 
-namespace TransformerTask.Tests
+namespace TransformerToWords.Tests
 {
     [TestFixture]
     public class TransformerTests

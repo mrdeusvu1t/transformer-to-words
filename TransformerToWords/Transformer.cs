@@ -1,6 +1,6 @@
 using System;
 
-namespace TransformerTask
+namespace TransformerToWords
 {
     /// <summary>
     /// Implements transformer class.
