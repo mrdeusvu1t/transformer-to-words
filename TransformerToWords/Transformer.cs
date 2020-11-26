@@ -1,4 +1,5 @@
-using System;
+﻿using System;
+using System.Text;
 
 namespace TransformerToWords
 {
@@ -19,7 +20,111 @@ namespace TransformerToWords
         /// </example>
         public string[] Transform(double[] source)
         {
-            throw new NotImplementedException("You need to implement this method.");
+            if (source is null)
+            {
+                throw new ArgumentNullException(nameof(source));
+            }
+
+            if (source.Length == 0)
+            {
+                throw new ArgumentException("array is empty", nameof(source));
+            }
+
+            string[] array = new string[source.Length];
+
+            for (int i = 0; i < source.Length; i++)
+            {
+                array[i] = TransformToWords(source[i]);
+            }
+
+            return array;
+        }
+
+        public static string TransformToWords(double number)
+        {
+            if (number is double.Epsilon)
+            {
+                return "Double Epsilon";
+            }
+
+            if (double.IsNaN(number))
+            {
+                return "Not a Number";
+            }
+
+            if (number == double.NegativeInfinity)
+            {
+                return "Negative Infinity";
+            }
+
+            if (number == double.PositiveInfinity)
+            {
+                return "Positive Infinity";
+            }
+
+            string result = "";
+
+            char[] n = number.ToString().ToCharArray();
+
+            for (int i = 0; i < n.Length; i++)
+            {
+                switch (n[i])
+                {
+                    case '0':
+                        result += "zero";
+                        break;
+                    case '1':
+                        result += "one";
+                        break;
+                    case '2':
+                        result += "two";
+                        break;
+                    case '3':
+                        result += "three";
+                        break;
+                    case '4':
+                        result += "four";
+                        break;
+                    case '5':
+                        result += "five";
+                        break;
+                    case '6':
+                        result += "six";
+                        break;
+                    case '7':
+                        result += "seven";
+                        break;
+                    case '8':
+                        result += "eight";
+                        break;
+                    case '9':
+                        result += "nine";
+                        break;
+                    case '+':
+                        result += "plus";
+                        break;
+                    case '-':
+                        result += "minus";
+                        break;
+                    case 'E':
+                        result += "E";
+                        break;
+                    case ',':
+                        result += "point";
+                        break;
+                }
+
+                if (i < n.Length - 1)
+                {
+                    result += " ";
+                }
+            }
+
+            var sb = new StringBuilder(result);
+            sb[0] = char.ToUpper(sb[0]);
+            result = sb.ToString();
+
+            return result;
         }
     }
 }
